@@ -6,7 +6,7 @@ pipeline:
       - npm test
   publish:
     image: plugins/docker
-    repo: luisredda/node-demo
+    repo: pmawyer/node-demo
     username:
       from_secret: docker_username
     password: 

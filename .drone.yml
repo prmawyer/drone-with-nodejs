@@ -43,4 +43,4 @@ pipeline:
         }}  ]
     when:
       repo:
-      - pmawyer/drone-with-nodejs
+      - prmawyer/drone-with-nodejs

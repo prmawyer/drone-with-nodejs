@@ -12,7 +12,7 @@ pipeline:
     password: 
       from_secret: docker_password
     dry_run: false # remove this to publish.
-  harness deploy:
+  harness-deploy:
     image: luisredda/drone-harness-plugin
     settings:  
     application: "Patrick-Workspace"

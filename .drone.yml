@@ -8,32 +8,32 @@ pipeline:
     image: plugins/docker
     repo: luisredda/node-demo
     username:
-      from_secret: u_docker
+      from_secret: docker_username
     password: 
-      from_secret: p_docker
+      from_secret: docker_password
     dry_run: false # remove this to publish.
   harness deploy:
     image: luisredda/drone-harness-plugin
     settings:  
-    application: "Harness Demo Application"
+    application: "Patrick-Workspace"
     type: "PIPELINE"
-    entityname: "CD Pipeline"
+    entityname: "pm-drone-test-pipeline"
     accountid:
-      from_secret: harness_acctid
+      from_secret: harness_se_acctid
     apikey: 
-      from_secret: harness_secret
+      from_secret: harness_se_apikey
     body: |
      variableInputs: [ 
       {
         name: "Service"
         variableValue: {
           type: NAME
-          value: "order-service"
+          value: "pm-drone-test"
         }
       }
       ], 
       serviceInputs: [ {
-        name: "order-service", 
+        name: "pm-drone-test", 
         artifactValueInput: {
           valueType: BUILD_NUMBER
           buildNumber: {
@@ -43,4 +43,4 @@ pipeline:
         }}  ]
     when:
       repo:
-      - luisredda/drone-with-nodejs
+      - pmawyer/drone-with-nodejs

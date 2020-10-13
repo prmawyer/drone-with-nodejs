@@ -6,6 +6,9 @@ npm-debug.log*
 #README.md
 *.md
 
+#gitignore
+.gitignore
+
 # Runtime data
 pids
 *.pid
